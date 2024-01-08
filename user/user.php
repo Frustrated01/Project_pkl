@@ -27,6 +27,7 @@
 <body class="bg-slate-200">
 	<?php include 'dashbar.php'; ?>	
 
+	<?php include '../alert.php'; ?>
 	<?php
 		if(isset($_GET["halaman"])){
 			if($_GET["halaman"] == "dashboard"){

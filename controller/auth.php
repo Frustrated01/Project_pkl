@@ -17,6 +17,7 @@
 		    if ($data['role']=="admin") {
 		    $_SESSION['id']         = $data['id'];
 		    $_SESSION['username']   = $data['username'];
+		    $_SESSION['telepone']   = $data['telepone'];
 		    $_SESSION['email']  	= $data['email'];
 		    $_SESSION['password']   = $data['password'];
 		    $_SESSION['role']    	= $data['role'];    
@@ -26,6 +27,7 @@
 		    elseif ($data['role']=="user"){
 		    $_SESSION['id']         = $data['id'];
 		    $_SESSION['username']   = $data['username'];
+		    $_SESSION['telepone']   = $data['telepone'];
 		    $_SESSION['email']   	= $data['email'];
 		    $_SESSION['password']   = $data['password'];
 		    $_SESSION['role']    	= $data['role'];
@@ -64,5 +66,27 @@
 	    }
 	}
 
+	elseif (isset($_POST['ubah'])) {
+		$nama 		= $_POST['username'];
+		$telepone 	= $_POST['telepone'];
+		$email 		= $_POST['email'];
+		$password 	= md5($_POST['kpassword']);
 
+		$stmt  = $conn->query("select * from user where email = '$email' and password = '$password'");
+		$data   = mysqli_fetch_array($stmt);
+		$cek    = mysqli_num_rows($stmt);
+
+		if ($cek > 0) {
+			$stmt = $conn->query("UPDATE user SET username='$name', telepone='$telepone', WHERE password='$password'");
+
+			if ($stmt) {
+				header('location: ../user/user.php?halaman=profile&pesan=berhasil');
+			}
+			else{
+				header('location: ../user/user.php?halaman=profile&pesan=gaga');
+			}
+		} else {
+			header('location: ../user/user.php?halaman=profile&pesan=gagal');
+		}
+	}
 ?>

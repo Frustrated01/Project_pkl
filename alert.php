@@ -36,6 +36,24 @@
       })
   }
 
+  function uprofile_berhasil(){
+
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: false,
+        
+      })
+
+      Toast.fire({
+        icon: 'success',
+        title: 'Akun berhasil dirubah!'
+
+      })
+  }
+
   function k_gagal(){
 
       const Toast = Swal.mixin({
@@ -68,6 +86,24 @@
       Toast.fire({
         icon: 'error',
         title: 'Akun gagal dibuat!'
+
+      })
+  }
+
+  function uprofile_gagal(){
+
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: false,
+        
+      })
+
+      Toast.fire({
+        icon: 'error',
+        title: 'Data gagal dirubah!'
 
       })
   }

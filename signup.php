@@ -11,7 +11,7 @@
 
 <div class="section w-full mt-[72px] h-screen flex justify-center items-center">
 	<div class="py-6 px-4 w-[400px] flex flex-col items-center shadow-xl bg-white rounded-md">
-		<h1 class="font-bold text-xl my-2">SIGN IN</h1>
+		<h1 class="font-bold text-xl my-2">SIGN UP</h1>
 		<form action="controller/auth.php" method="post" class="w-full flex flex-col items-center">
 			<label class="form-control w-full">
 			  <div class="label">
@@ -38,7 +38,7 @@
 			  <input type="password" minlength="8" name="cpassword" required placeholder="Masukan password anda" class="input input-bordered w-full" />
 			</label>
 			<button class="btn my-4 w-full hover:text-white hover:bg-info" value="signup" name="signup">Daftar</button>
-			<a>Belum punya akun ?</a><a href="index.php?halaman=signup" class="text-blue-500 hover:underline">Buat Akun</a>
+			<a>Sudah Punya Akun ?</a><a href="index.php?halaman=signin" class="text-blue-500 hover:underline">Masuk</a>
 		</form>
 	</div>
 </div>

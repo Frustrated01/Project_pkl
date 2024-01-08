@@ -1,4 +1,4 @@
-<div class="section mt-[60px] mb-10">
+<div class="section mb-10">
 	<div class="border-b border-b-black border-b-2">
 		<div class="carousel w-full">
 			<div id="item1" class="carousel-item w-full h-[720px]">
