@@ -1,4 +1,4 @@
-<div class="navbar bg-base-100 shadow-md top-0 fixed">
+<div class="navbar bg-base-100 shadow-md">
 	<div class="navbar-start">
 		<div class="dropdown">
 			<div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -17,13 +17,33 @@
 			<a class="pl-4 font-bold text-xs sm:text-sm">SUKABUMI PENGADAAN TANAH</a>
 		</div>
 	</div>
-	<div class="navbar-end hidden lg:flex">
+	<div class="navbar-end hidden sm:flex">
 		<ul class="menu menu-horizontal px-1 font-bold">
 			<li class="hover:bg-info hover:text-white rounded-lg"><a href="../index.php?halaman=beranda">BERANDA</a></li>
 			<li class="hover:bg-info hover:text-white rounded-lg"><a href="user.php?halaman=dashboard">DASHBOARD</a></li>
 			<li class="hover:bg-info hover:text-white rounded-lg"><a href="user.php?halaman=dataperencanaan">PERENCANAAN</a></li>
 			<li class="hover:bg-info hover:text-white rounded-lg"><a href="user.php?halaman=profile">PROFILE</a></li>
-			<li class="hover:bg-info hover:text-white rounded-lg"><a href="user.php?halaman=logout">LOGOUT</a></li>
+			<li class="hover:bg-info hover:text-white rounded-lg"><a href="#" onclick="confirmLogout(<?= $_SESSION['id']?>)">LOGOUT</a></li>
 		</ul>
 	</div>
 </div>
+
+<script>
+function confirmLogout() {
+    Swal.fire({
+        title: 'Konfirmasi Logout',
+        text: 'Anda yakin ingin keluar?',
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
+        confirmButtonText: 'Ya, Logout',
+        cancelButtonText: 'Batal'
+    }).then((result) => {
+        if (result.value) {
+            // Redirect atau lakukan logout di sini
+            window.location.href = '../controller/logout.php'; // Gantilah dengan URL logout yang sesuai
+        }
+    });
+}
+</script>

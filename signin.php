@@ -1,3 +1,14 @@
+<?php
+	if (isset($_GET['pesan'])) {
+		if($_GET['pesan'] == 'berhasil'){
+			echo "<script>i_berhasil()</script>";
+		}
+		elseif ($_GET['pesan'] == 'gagal') {
+			echo "<script>i_gagal()</script>";
+		}
+	}
+?>
+
 <div class="section w-full mt-[22px] h-screen flex justify-center items-center">
 	<div class="py-6 px-4 w-[400px] flex flex-col items-center shadow-xl bg-white rounded-md">
 		<h1 class="font-bold text-xl my-2">SIGN IN</h1>

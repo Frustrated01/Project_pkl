@@ -6,9 +6,11 @@
 	if (!isset($_SESSION['role'])) {
 		header("location: ../index.php");    
     }
-    elseif(isset($_SESSION['role']) == 'user') {
-		header("location: ../user/user.php?halaman=dashboard");
-	}
+    if (isset($_SESSION['role'])) {
+    	if ($_SESSION['role'] == 'user') {
+    		header('location: ../user/user.php');
+    	}
+    }
 	
 ?>
 <!DOCTYPE html>
@@ -19,8 +21,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.20/dist/full.min.css" rel="stylesheet" type="text/css" />
 	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 	<link rel="stylesheet" href="style.css">
-	<title>BERANDA</title>
+	<link rel="shortcut icon" href="logo.png">
+	<title>SIPETA</title>
 </head>
 <body class="bg-slate-200">
 	<?php include 'dashbar.php'; ?>
@@ -35,9 +39,6 @@
 			}
 			elseif($_GET["halaman"] == "profile"){
 				include '../profile.php';
-			}
-			elseif($_GET["halaman"] == "logout"){
-				include '../controller/logout.php';
 			}
 		}
 		else{

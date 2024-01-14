@@ -1,6 +1,7 @@
 <?php
 	include 'controller/conn.php';
 	session_start();
+
 ?>
 
 
@@ -12,8 +13,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.20/dist/full.min.css" rel="stylesheet" type="text/css" />
 	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 	<link rel="stylesheet" href="style.css">
-	<title>BERANDA</title>
+	<link rel="shortcut icon" href="logo.png">
+	<title>SIPETA</title>
 </head>
 <body class="bg-slate-200">
 	<?php
@@ -50,9 +53,6 @@
 			elseif($_GET["halaman"] == "edit"){
 				include 'edit.php';
 			}
-			elseif($_GET["halaman"] == "remove"){
-				include 'remove.php';
-			}
 			elseif($_GET["halaman"] == "beranda"){
 				include 'beranda.php';
 			}
@@ -63,5 +63,12 @@
 	?>
 
 	<?php include 'footer.php'; ?>
+	<?php
+	if (isset($_GET['pesan'])) {
+		if($_GET['pesan'] == 'logout'){
+			echo "<script>logout()</script>";
+		}
+	}
+	?>		
 </body>
 </html>

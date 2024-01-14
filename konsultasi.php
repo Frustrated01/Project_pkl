@@ -1,10 +1,10 @@
 <?php
 	if (isset($_GET['pesan'])) {
 		if($_GET['pesan'] == 'berhasil'){
-			echo "<script>berhasil()</script>";
+			echo "<script>k_berhasil()</script>";
 		}
 		elseif ($_GET['pesan'] == 'gagal') {
-			echo "<script>gagal()</script>";
+			echo "<script>k_gagal()</script>";
 		}
 	}
 ?>
@@ -20,7 +20,7 @@
 					<div class="label">
 						<span class="label-text">Nama Lengkap</span>
 					</div>
-					<input type="text" name="username" placeholder="Joen Doeu" class="input input-bordered w-full" />
+					<input type="text" name="username" placeholder="Joen Doeu" class="input input-bordered w-full" required />
 				</label>
 		    </div>
 		    <div class="col-span-3 row-start-2">
@@ -28,7 +28,7 @@
 					<div class="label">
 						<span class="label-text">Email</span>
 					</div>
-					<input type="text" name="email" placeholder="example@mail.com" class="input input-bordered w-full" />
+					<input type="text" name="email" placeholder="example@mail.com" class="input input-bordered w-full" required />
 				</label>
 		    </div>
 		    <div class="col-span-3 col-start-4 row-start-2">
@@ -36,7 +36,7 @@
 					<div class="label">
 						<span class="label-text">Telephone</span>
 					</div>
-					<input type="text" name="telephone" placeholder="08xxx" class="input input-bordered w-full" />
+					<input type="text" name="telephone" placeholder="08xxx" class="input input-bordered w-full" required />
 				</label>
 		    </div>
 		    <div class="col-span-6 row-start-3 h-fit">
@@ -44,7 +44,7 @@
 				  <div class="label">
 				    <span class="label-text">Topik</span>
 				  </div>
-				  <select class="select select-bordered" name="topik">
+				  <select class="select select-bordered" name="topik" required>
 				    <option disabled selected>Pilih topik</option>
 				    <option value="Cara Penggunaan Website">Cara Penggunaan Website</option>
 				    <option value="Persyaratan lainnya">Persyaratan lainnya</option>
@@ -57,7 +57,7 @@
 					<div class="label">
 						<span class="label-text">Pesan</span>
 					</div>
-					<textarea class="textarea textarea-bordered w-full h-[120px] resize-none" name="pesan" placeholder="Pesan"></textarea>
+					<textarea class="textarea textarea-bordered w-full h-[120px] resize-none" name="pesan" placeholder="Pesan" required></textarea>
 				</label>
 		    </div>
 		    <div class="col-span-6 row-start-6 flex justify-end">

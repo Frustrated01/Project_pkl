@@ -15,7 +15,7 @@
 
 		if ($cek > 0) {
 		    if ($data['role']=="admin") {
-		    $_SESSION['id']         = $data['id'];
+		    $_SESSION['id']         = $data['id_user'];
 		    $_SESSION['username']   = $data['username'];
 		    $_SESSION['telepone']   = $data['telepone'];
 		    $_SESSION['email']  	= $data['email'];
@@ -25,7 +25,7 @@
 		    }
 
 		    elseif ($data['role']=="user"){
-		    $_SESSION['id']         = $data['id'];
+		    $_SESSION['id']         = $data['id_user'];
 		    $_SESSION['username']   = $data['username'];
 		    $_SESSION['telepone']   = $data['telepone'];
 		    $_SESSION['email']   	= $data['email'];
@@ -36,7 +36,7 @@
 		}
 
 		else{
-		    header("location: ../index.php?halaman=signin");
+		    header("location: ../index.php?halaman=signin&pesan=gagal");
 		}
 	}
 
@@ -76,10 +76,20 @@
 		$stmt  = $conn->query("SELECT * FROM user WHERE email = '$email' AND password = '$password'");
 
 		if ($stmt->num_rows > 0) {
-			$stmt = $conn->query("UPDATE user SET username = '$nama', telepone = '$telepone' WHERE id = '$id'");
+			$stmt = $conn->query("UPDATE user SET username = '$nama', telepone = '$telepone' WHERE id_user = '$id'");
 			header("location: ../user/user.php?halaman=profile&pesan=berhasil");
 		} else {
 			header("location: ../user/user.php?halaman=profile&pesan=gagal");
+		}
+	}
+
+	elseif (isset($_POST['kembali'])) {
+		if (isset($_SESSION['role'])) {
+			if ($_SESSION['role'] == 'admin') {
+				header('location: ../admin/admin.php?halaman=dataperencanaan');
+			} else {
+				header('location: ../user/user.php?halaman=dataperencanaan');
+			}
 		}
 	}
 ?>

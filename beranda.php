@@ -1,11 +1,11 @@
 <div class="section mb-10">
 	<div class="border-b border-b-black border-b-2">
-		<div class="carousel w-full">
-			<div id="item1" class="carousel-item w-full h-[720px]">
-				<img src="https://picsum.photos/1980/1200" class="w-full" />
+		<div class="carousel w-full max-h-[480px]">
+			<div id="item1" class="carousel-item w-full">
+				<img src="https://picsum.photos/800/1366" class="w-full" />
 			</div> 
 			<div id="item2" class="carousel-item w-full">
-				<img src="https://picsum.photos/1980/1080" class="w-full" />
+				<img src="https://picsum.photos/800/1366" class="w-full" />
 			</div>
 		</div> 
 		<div class="flex justify-center w-full py-2 gap-2">

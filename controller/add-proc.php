@@ -1,6 +1,6 @@
 <?php  
-
 	include 'conn.php';
+	session_start();
 
 	if (isset($_POST['konsultasi'])) {
 		$username	= $_POST['username'];
@@ -9,12 +9,20 @@
 		$topik		= $_POST['topik'];
 		$pesan		= $_POST['pesan'];
 
-		$result = $conn->query("INSERT INTO konsultasi VALUES('', '$username', '$email', '$telephone', '$topik', '$pesan')");
-
-		if ($result) {
-			header('location: ../index.php?halaman=konsultasi&pesan=berhasil'); 
+		$stmt = $conn->query("SELECT * FROM user WHERE email = '$email'");
+		if ($stmt->num_rows > 0) {
+			$stmt 	= $conn->query("SELECT * FROM user WHERE email='$email'");
+			$row = mysqli_fetch_array($stmt);
+			$id_user = $row['id_user'];
+			$result = $conn->query("INSERT INTO konsultasi VALUES('', '$id_user', '$username', '$email', '$telephone', '$topik', '$pesan', current_timestamp())");
+			if ($result) {
+				header('location: ../index.php?halaman=konsultasi&pesan=berhasil');
+			} else {
+				header('location: ../index.php?halaman=konsultasi&pesan=gagal');
+			}
 		} else {
-			header('location: ../index.php?halaman=konsultasi&pesan=gagal');
+			$result = $conn->query("INSERT INTO konsultasi VALUES('', '', '$username', '$email', '$telephone', '$topik', '$pesan', current_timestamp())");
+			header('location: ../index.php?halaman=konsultasi&pesan=berhasil');
 		}
 	}
 
@@ -35,15 +43,25 @@
 		$alokasi	 = $_POST['alokasi'];
 		$persiapan	 = $_POST['persiapan'];
 		$pelaksanaan = $_POST['pelaksanaan'];
-		$dokumen	 = $_POST['dokumen'];
 		$keterangan	 = $_POST['keterangan'];
+		$upload 	 = $_FILES['files'];
 		
-		$result = $conn->query("INSERT INTO perencanaan VALUES('', '$id', '$namai', '$pimpinani', '$peruntukan', '$kategori', '$kelurahan', '$kecamatan', '$lintang', '$bujur', '$lokasi', '$rencana', '$luas', '$panjang', '$alokasi', '$persiapan', '$pelaksanaan', '$dokumen', '$keterangan')");
+	    for ($i = 0; $i < count($upload['name']); $i++) {
+	        $file_name = $upload['name'][$i];
+	        $file_tmp = $upload['tmp_name'][$i];
 
-		if ($result) {
-			header('location: ../user.php?halaman=dataperencanaan&pesan=berhasil'); 
-		} else {
-			header('location: ../user.php?halaman=dataperencanaan&pesan=gagal');
-		}
+			$result = $conn->query("INSERT INTO perencanaan VALUES ('', '$id', '$namai', '$pimpinani', '$peruntukan', '$kategori', '$kelurahan', '$kecamatan', '$lintang', '$bujur', '$lokasi', '$rencana', '$luas', '$panjang', '$alokasi', '$persiapan', '$pelaksanaan', '$file_name', '$keterangan', 'Dalam Peninjauan');");
+
+	        if ($result ) {
+				header('location: ../user/user.php?halaman=dataperencanaan&pesan=berhasil'); 
+
+	        } else {
+				header('location: ../user/user.php?halaman=dataperencanaan&pesan=gagal');
+	        }
+	    }
+	}
+
+	elseif (isset($_POST['kembali'])) {
+		header('location: ../user/user.php?halaman=dataperencanaan');
 	}
 ?>

@@ -1,5 +1,95 @@
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
 <script>
+  function p_berhasil(){
+
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: false,
+        
+      })
+
+      Toast.fire({
+        icon: 'success',
+        title: 'Data berhasil dikirim!'
+
+      })
+  }
+
+  function p_gagal(){
+
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: false,
+        
+      })
+
+      Toast.fire({
+        icon: 'error',
+        title: 'Data gagal dikirim!'
+
+      })
+  }
+
+  function e_berhasil(){
+
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: false,
+        
+      })
+
+      Toast.fire({
+        icon: 'success',
+        title: 'Data berhasil dirubah!'
+
+      })
+  }
+
+  function e_gagal(){
+
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: false,
+        
+      })
+
+      Toast.fire({
+        icon: 'error',
+        title: 'Data gagal dirubah!'
+
+      })
+  }
+
+  function h_berhasil(){
+
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: false,
+        
+      })
+
+      Toast.fire({
+        icon: 'success',
+        title: 'Data berhasil dihapus!'
+
+      })
+  }
+
   function k_berhasil(){
 
       const Toast = Swal.mixin({
@@ -14,42 +104,6 @@
       Toast.fire({
         icon: 'success',
         title: 'Pesan berhasil dikirim!'
-
-      })
-  }
-
-  function u_berhasil(){
-
-      const Toast = Swal.mixin({
-        toast: true,
-        position: 'top-end',
-        showConfirmButton: false,
-        timer: 2000,
-        timerProgressBar: false,
-        
-      })
-
-      Toast.fire({
-        icon: 'success',
-        title: 'Akun berhasil dibuat!'
-
-      })
-  }
-
-  function uprofile_berhasil(){
-
-      const Toast = Swal.mixin({
-        toast: true,
-        position: 'top-end',
-        showConfirmButton: false,
-        timer: 2000,
-        timerProgressBar: false,
-        
-      })
-
-      Toast.fire({
-        icon: 'success',
-        title: 'Akun berhasil dirubah!'
 
       })
   }
@@ -72,6 +126,26 @@
       })
   }
 
+  function u_berhasil(){
+
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: false,
+        
+      })
+
+      Toast.fire({
+        icon: 'success',
+        title: 'Akun berhasil dibuat!'
+
+      })
+  }
+
+
+
   function u_gagal(){
 
       const Toast = Swal.mixin({
@@ -86,6 +160,42 @@
       Toast.fire({
         icon: 'error',
         title: 'Akun gagal dibuat!'
+
+      })
+  }
+
+  function i_gagal(){
+
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: false,
+        
+      })
+
+      Toast.fire({
+        icon: 'error',
+        title: 'Email atau password yang anda masukan salah!'
+
+      })
+  }
+
+  function uprofile_berhasil(){
+
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: false,
+        
+      })
+
+      Toast.fire({
+        icon: 'success',
+        title: 'Akun berhasil dirubah!'
 
       })
   }
@@ -121,7 +231,7 @@
 
       Toast.fire({
         icon: 'success',
-        title: 'Anda berhasi logout!'
+        title: 'Anda berhasil logout!'
 
       })
   }
