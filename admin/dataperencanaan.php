@@ -16,6 +16,7 @@
 			echo "<script>h_berhasil()</script>";
 		}
 	}
+
 ?>
 
 
@@ -24,47 +25,47 @@
 	<p class="text-center mt-4">Berikut adalah kumpulan-kumpulan formulir yang sudah anda submit.</p>
 	
 	<div class="w-10/12 h-full bg-white px-2 py-4 rounded rounded-xl my-10 shadow-md">
-		<div>
-			<div class="overflow-x-auto">
-				<table class="table table-md border-none border">
-					<thead>
-						<tr>
-							<th>No</th>
-							<th>Nama Lengkap</th>
-							<th>Email</th>
-							<th>Telephone</th>
-							<th>Total Data</th>
-							<th>Aksi</th>
-						</tr>
-					</thead>
+		<div class="overflow-x-auto">
+			<table class="table table-md border-none border">
+				<thead>
+					<tr>
+						<th>No</th>
+						<th>Nama Lengkap</th>
+						<th>Email</th>
+						<th>Telephone</th>
+						<th>Total Data</th>
+						<th>Aksi</th>
+					</tr>
+				</thead>
 
-					<tbody>
+				<tbody>
 <?php  
-	$no = 1;
-	$stmt = $conn->query("SELECT * FROM user");
-	$stmt2 = $conn->query("SELECT * FROM perencanaan WHERE id_user = '4'");
-	$row = mysqli_num_rows($stmt2);
+$no = 1;
+$stmt = $conn->query("SELECT * FROM user");
+$stmt2 = $conn->query("SELECT * FROM perencanaan WHERE id_user = '4'");
+$row = mysqli_num_rows($stmt2);
 
-	while ($person = mysqli_fetch_array($stmt)){
-		$id = $person['id_user'];
-		$stmt2 = $conn->query("SELECT * FROM perencanaan WHERE id_user = '$id'");
-		$row = mysqli_num_rows($stmt2);
+while ($person = mysqli_fetch_array($stmt)){
+	$id = $person['id_user'];
+	$stmt2 = $conn->query("SELECT * FROM perencanaan WHERE id_user = '$id'");
+	$row = mysqli_num_rows($stmt2);
 ?>
-						<tr>
-							<th><?= $no++ ?></th>
-							<td><?= $person['username'] ?></td>
-							<td><?= $person['email'] ?></td>
-							<td><?= $person['telepone'] ?></td>
-							<td><?= $row ?></td>
-							<td class="flex justify-center"><a role href="admin.php?halaman=dataperencanaan&id=<?= $person['id_user'] ?>&#table" class="btn btn-info w-full text-white hover:outline hover:outline-2 hover:outline-offset-2">Cari</a></td>
-						</tr>
+					<tr>
+						<th><?= $no++ ?></th>
+						<td><?= $person['username'] ?></td>
+						<td><?= $person['email'] ?></td>
+						<td><?= $person['telepone'] ?></td>
+						<td><?= $row ?></td>
+						<td class="flex justify-center"><a role href="admin.php?halaman=dataperencanaan&id=<?= $person['id_user'] ?>&#table" class="btn btn-info w-full text-white hover:outline hover:outline-2 hover:outline-offset-2">Cari</a></td>
+					</tr>
 <?php } ?>
-					</tbody>
-				</table>
-			</div>
-		</div>
-		<div>
-			<div class="overflow-x-auto" id="table">
+				</tbody>
+			</table>
+		</div>	
+	</div>
+	
+	<div class="w-10/12 h-full bg-white px-2 py-4 rounded rounded-xl mt-4 mb-10 shadow-md">
+		<div class="overflow-x-auto" id="table">
 			<table class="table table-md border-none border">
 				<thead>
 					<tr>
@@ -130,7 +131,6 @@
 ?>
 				</tbody>
 			</table>
-		</div>
 		</div>
 	</div>
 </div>

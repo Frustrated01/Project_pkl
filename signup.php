@@ -6,6 +6,9 @@
 		elseif ($_GET['pesan'] == 'gagal') {
 			echo "<script>u_gagal()</script>";
 		}
+		elseif ($_GET['pesan'] == 'ads') {
+			echo "<script>ads_gagal()</script>";
+		}
 	}
 ?>
 
@@ -17,7 +20,7 @@
 			  <div class="label">
 			    <span class="label-text">Nama Lengkap</span>
 			  </div>
-			  <input type="text" name="namaL" required placeholder="Masukan email anda" class="input input-bordered w-full" />
+			  <input type="text" name="namaL" placeholder="Masukkan nama anda" class="input input-bordered w-full" oninput="this.value = this.value.replace(/[^A-Za-z ]/g, '');"/>
 			</label>
 			<label class="form-control w-full">
 			  <div class="label">

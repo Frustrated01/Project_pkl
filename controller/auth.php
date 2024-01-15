@@ -48,22 +48,27 @@
 		
 		$result = $conn->query("select * from user where email='$email'"); 
 	    $num = mysqli_num_rows($result);  
-		
-	    if ($password == $cpassword) {
-	        $result = $conn->query("SELECT * FROM user WHERE email='$email'");
-	        if (!$result->num_rows > 0) {
-	            $result = $conn->query("INSERT INTO user (username, email, password, role) VALUES ('$namaL', '$email', '$password', 'user')");
-	            if ($result) {
-			        header('location: ../index.php?halaman=signup&pesan=berhasil');
-	            } else {
-			        header('location: ../index.php?halaman=signup&pesan=gagal');
-	            }
-	        } else {
-		        header('location: ../index.php?halaman=signup&pesan=gagal');
-	        }
+
+	    if ($num > 0) {
+	    	header('location: ../index.php?halaman=signup&pesan=ads');
 	    } else {
-	        header('location: ../index.php?halaman=signup&pesan=gagal');
+		    if ($password == $cpassword) {
+		        $result = $conn->query("SELECT * FROM user WHERE email='$email'");
+		        if (!$result->num_rows > 0) {
+		            $result = $conn->query("INSERT INTO user (username, email, password, role) VALUES ('$namaL', '$email', '$password', 'user')");
+		            if ($result) {
+				        header('location: ../index.php?halaman=signup&pesan=berhasil');
+		            } else {
+				        header('location: ../index.php?halaman=signup&pesan=gagal');
+		            }
+		        } else {
+			        header('location: ../index.php?halaman=signup&pesan=gagal');
+		        }
+		    } else {
+		        header('location: ../index.php?halaman=signup&pesan=gagal');
+		    }
 	    }
+
 	}
 
 	elseif (isset($_POST['ubah'])) {
