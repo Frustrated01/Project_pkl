@@ -1,0 +1,29 @@
+-Form pengadaan tanah
+-Form Login Register ForgotPassword
+-Form Konsultasi
+-Form Edit Profile
+
+-Memunculkan peta dengan mark di koordinat tertentu
+-Sanitasi
+-Report data pernecanaan berdasarkan status
+-Mengirimakan pesan notifikasi dan konsultasi ke email (PHP MAILER)
+-Pagination
+-Async
+
+(GUEST)
+-Beranda
+-Tanah (Memunculkan Peta)
+-Konsultasi (Form Konsultasi)
+-Authentication
+
+(USER)
+-Beranda
+-Pengadaan (Form Pengadaan - Filter/Kolomtable - )
+-Konsultasi (Data Konsultasi USER)
+-Profile (Data User - Edit data user)
+
+(ADMIN)
+-Beranda
+-Pengadaan (Data User - Data Pengadaan - Report{Status} - Filter/Kolomtable)
+-Konsultasi (Data User - Data Konsultasi - Balas Konsultasi)
+-Profile (Data Admin - Tambah & Edit akun Admin)
