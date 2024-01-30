@@ -1,29 +1,18 @@
--Form pengadaan tanah
--Form Login Register ForgotPassword
--Form Konsultasi
--Form Edit Profile
+-Tentukan / Menambahkan validasi Format Koordinat Lintang dan Bujur di Front-end dan Back-end<BERES>
+-Perbaikan database dibagian relasi (Table Konsultasi dan User) <BERES>
+-Admin bisa membalas pesan konsultasi dan mengirimkannya ke emal otomatis oleh php <BERES>
+-Perbaikan form input agar tidak bisa diisi oleh tag html <BERES>
+-Membuat filter di data perencanaan (Filter Kecamatan-KategoriProyek-Status) <BERES>
+-Menambahkan Satus undangan ke kantor <BERES>
+-Halaman data konsultasi <BERES>
+-Layout (Fokus pada tampilan halaman utama dan data perencanaan) <BERES>
+-Ubah judul project (Bayang2 menjadi Pengajuan formulir pengadaan tanah berbasis web) <GA JADI>
+-Hak Akses () <GAJE>
+-Buat halaman untuk menampilkan data tanah yang sudah di inputkan user dengan syarat status formulir harus sudah (SELESAI) *data koordinat muncul sesuai dengan yang ada di database <BERES>
+-misahin admin sama user di halaman dashboard,	 balasan <BERES(DETAIL,BALASAN)>
+edit status bisa langsung dihalaman detail admin
 
--Memunculkan peta dengan mark di koordinat tertentu
--Sanitasi
--Report data pernecanaan berdasarkan status
--Mengirimakan pesan notifikasi dan konsultasi ke email (PHP MAILER)
--Pagination
--Async
 
-(GUEST)
--Beranda
--Tanah (Memunculkan Peta)
--Konsultasi (Form Konsultasi)
--Authentication
 
-(USER)
--Beranda
--Pengadaan (Form Pengadaan - Filter/Kolomtable - )
--Konsultasi (Data Konsultasi USER)
--Profile (Data User - Edit data user)
-
-(ADMIN)
--Beranda
--Pengadaan (Data User - Data Pengadaan - Report{Status} - Filter/Kolomtable)
--Konsultasi (Data User - Data Konsultasi - Balas Konsultasi)
--Profile (Data Admin - Tambah & Edit akun Admin)
+-Notifikasi untuk user (Memberi mark di navbar jika ada perubahan data status)
+-Report data perencanaan (Report data bisa dilihat waktu (/minggu /bulan /tahun))

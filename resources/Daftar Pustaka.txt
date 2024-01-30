@@ -1,0 +1,54 @@
+Judul Laporan "Formulir Pengadaan Tanah Berbasis Web Dinas Pertanahan Dan Tata Ruang Kab. Sukabumi"
+
+xampp:
+https://www.dewaweb.com/blog/apa-itu-xampp/ (M Ali Maksum - May 23, 2022)
+XAMPP adalah software open source berbasis web server yang berisi berbagai program. Aplikasi ini mendukung berbagai sistem operasi seperti Linux, Windows, MacOS, dan Solaris. Fungsi XAMPP adalah sebagai server lokal/localhost, di dalamnya sudah mencakup program Apache, MySQL dan PHP.
+
+Mysql:
+https://www.hostinger.co.id/tutorial/apa-itu-mysql (Ariata C - Jan 18, 2023)
+Beberapa orang bahkan membaca MySQL sebagai “my sequel”. Kegunaan atau fungsi MySQL adalah untuk data warehousing (gudang data), yaitu pengumpulan data dari berbagai sumber, untuk e-commerce, maupun aplikasi logging.
+
+Website:
+https://mediaindonesia.com/teknologi/531273/website-adalah-pengertian-jenis-dan-fungsi (Joan Imanuella Hanna Pangemanan - Kamis 20 Okt 2022)
+Website adalah sejumlah halaman web yang memiliki topik saling terkait antara satu halaman dan halaman yang lain. Biasanya ini ditempatkan pada satu server web yang dapat diakses melalui jaringan internet maupun jaringan wilayah lokal (LAN).
+
+Database:
+https://www.dicoding.com/blog/apa-itu-database/ (Dicoding intern - Sep 16 2020)
+Database atau basis data adalah kumpulan data yang dikelola sedemikian rupa berdasarkan ketentuan tertentu yang saling berhubungan sehingga mudah dalam pengelolaannya. Melalui pengelolaan tersebut pengguna dapat memperoleh kemudahan dalam mencari informasi, menyimpan informasi dan membuang informasi.
+
+HTML:
+https://www.domainesia.com/berita/html-adalah/ (Ratna Patria - MEI 4 2023)
+HTML adalah kependekan dari Hypertext Markup Language yang merupakan sebuah bahasa markup. HTML adalah kode untuk membuat struktur halaman suatu website yang menarik, saling terhubung satu dengan yang lainnya, dan yang pasti dapat diakses melalui internet. 
+
+PHP:
+https://www.jagoanhosting.com/blog/pengertian-php/ (JAGOAN HOSTING TEAM - MEI 14 2022)
+PHP Adalah bahasa scripting server-side, Bahasa pemrograman yang digunakan untuk mengembangkan situs web statis atau situs web dinamis atau aplikasi Web. PHP singkatan dari Hypertext Pre-processor, yang sebelumnya disebut Personal Home Pages.
+
+CSS:
+https://www.hostinger.co.id/tutorial/apa-itu-css (Ariata C. - Dec 14 2022)
+CSS adalah bahasa Cascading Style Sheet dan biasanya digunakan untuk mengatur tampilan elemen yang tertulis dalam bahasa markup, seperti HTML. CSS berfungsi untuk memisahkan konten dari tampilan visualnya di situs.
+
+Sublim text:
+https://idmetafora.com/news/read/857/Apa-Itu-Sublime-Text-Kenali-Fitur-Fitur-di-Dalamnya.html (Fajri - Aug 31 2022)
+Sublime text adalah sebuah aplikasi text editor yang sering digunakan oleh programer khususnya web developer. Aplikasi ini menjadi senjata penting bagi web devloper dalam mengembangakan suatu aplikasi.
+
+Flowchart:
+https://www.dicoding.com/blog/flowchart-adalah/ (Rony Setiawan - aug 4 2021)
+Flowchart adalah sebuah diagram yang menjelaskan alur proses dari sebuah program. Dalam membangun sebuah program, flowchart berperan penting untuk menerjemahkan proses berjalannya sebuah program agar lebih mudah untuk dipahami. 
+
+Activity Diagram:
+https://www.jojonomic.com/blog/activity-diagram/ (Uri Tanoto - Dec 29 2020)
+Activity Diagram atau Diagram aktivitas adalah bentuk visual dari alur kerja yang berisi aktivitas dan tindakan, yang juga dapat berisi pilihan, atau pengulangan. Dalam Unified Modeling Language(UML), diagram aktivitas dibuat untuk menjelaskan aktivitas komputer maupun alur aktivitas dalam organisasi. Selain itu diagram aktivitas juga menggambarkan alur kontrol secara garis besar.
+
+DFD:
+https://www.sekawanmedia.co.id/blog/dfd-adalah/ (Muhammad Robith Adani - june 22 2021)
+DFD adalah suatu diagram yang menggambarkan aliran data dari sebuah proses yang sering disebut dengan sistem informasi. Di dalam data flow diagram juga menyediakan informasi mengenai input dan output dari tiap entitas dan proses itu sendiri.
+
+Use Case:
+https://www.jagoanhosting.com/blog/use-case-diagram/ (REDAKSI JAGOAN HOSTING - june 10 2022)
+Use case adalah salah satu dari berbagai jenis diagram Unified Modeling Langueage(UML) yang menggambarkan hubungan interaksi antara aktor dan sistem yang dimaksud aktor disini dapat berupa manusia atau perangkat
+
+Class Diagram
+https://www.dicoding.com/blog/memahami-class-diagram-lebih-baik/ (Rony Setiawan - oct 13 2021)
+Class diagram atau diagram kelas adalah salah satu jenis diagram struktur pada UML yang menggambarkan dengan jelas struktur serta deskripsi class, atribut, metode, dan hubungan dari setiap objek. Ia bersifat statis, dalam artian diagram kelas bukan menjelaskan apa yang terjadi jika kelas-kelasnya berhubungan, melainkan menjelaskan hubungan apa yang terjadi. 
+

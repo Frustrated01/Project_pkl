@@ -1,70 +1,65 @@
 <?php
-	if (isset($_GET['pesan'])) {
-		if($_GET['pesan'] == 'berhasil'){
-			echo "<script>berhasil()</script>";
-		}
-		elseif ($_GET['pesan'] == 'gagal') {
-			echo "<script>gagal()</script>";
-		}
-	}
+$csrf_token = bin2hex(random_bytes(32));
+$_SESSION['csrf_token'] = $csrf_token;
 ?>
 
-<div class="section mt-[22px] flex items-center flex-col">
-	<h1 class="text-6xl font-medium mt-10">Konsultasi</h1>
-	<p class="text-center mt-4">Selamat Datang Di Halaman Konsultasi, Silahkan Sampaikan Pertanyaan atau Permasalahan dengan <br> Mengisi Form Dibawah Ini, dan Jawaban Akan Disampaikan Melalui Email yang Didaftarkan</p>
-	<div class="section w-full px-2 sm:px-0 sm:w-7/12 mt-10">
-			<form action="controller/add-proc.php" method="post">
-		<div class="grid grid-cols-6 grid-rows-6 gap-4">
-		    <div class="col-span-6 w-full">
-		    	<label class="form-control w-full">
-					<div class="label">
-						<span class="label-text">Nama Lengkap</span>
-					</div>
-					<input type="text" name="username" placeholder="Joen Doeu" class="input input-bordered w-full" />
-				</label>
-		    </div>
-		    <div class="col-span-3 row-start-2">
-		    	<label class="form-control w-full">
-					<div class="label">
-						<span class="label-text">Email</span>
-					</div>
-					<input type="text" name="email" placeholder="example@mail.com" class="input input-bordered w-full" />
-				</label>
-		    </div>
-		    <div class="col-span-3 col-start-4 row-start-2">
-		    	<label class="form-control w-full">
-					<div class="label">
-						<span class="label-text">Telephone</span>
-					</div>
-					<input type="text" name="telephone" placeholder="08xxx" class="input input-bordered w-full" />
-				</label>
-		    </div>
-		    <div class="col-span-6 row-start-3 h-fit">
+<div class="w-[10/12] sm:w-6/12 flex flex-col justify-center h-fit mt-24">
+	<h1 class="text-6xl text-center font-bold">KONSULTASI</h1>
+	<p class="text-center">Silahkan sampaikan pertanyaan atau permasalahan dengan mengisi form dibawah ini, dan jawaban akan disampaikan melalui email yang didaftarkan.</p>
+</div>
+<div class="w-8/12 h-fit my-12 p-4 bg-neutral-100 rounded-3xl shadow-2xl">
+	<form action="./controller/add-proc.php" method="post" accept-charset="utf-8" class="bg-base-100 rounded-2xl p-4 shadow-md" >				
+		<input type="hidden" name="csrf_token" value="<?=$csrf_token?>">
+
+		<div class="grid grid-cols-4 grid-rows-5 gap-4">
+		    <div class="h-fit col-span-4">
 		    	<label class="form-control w-full">
 				  <div class="label">
-				    <span class="label-text">Topik</span>
+				    <span class="label-text">Nama Lengkap *</span>
 				  </div>
-				  <select class="select select-bordered" name="topik">
-				    <option disabled selected>Pilih topik</option>
-				    <option value="Cara Penggunaan Website">Cara Penggunaan Website</option>
-				    <option value="Persyaratan lainnya">Persyaratan lainnya</option>
-				    <option value="Lainnya">Lainnya</option>
+				  <input type="text" placeholder="Type here" name="nama" required class="input input-bordered w-full" />
+				</label>
+		    </div>
+		    <div class="h-fit col-span-2 row-start-2">
+		    	<label class="form-control w-full">
+				  <div class="label">
+				    <span class="label-text">Email *</span>
+				  </div>
+				  <input type="text" placeholder="Type here" name="email" required class="input input-bordered w-full" />
+				</label>
+		    </div>
+		    <div class="h-fit col-span-2 col-start-3 row-start-2">
+		    	<label class="form-control w-full">
+				  <div class="label">
+				    <span class="label-text">Telephone</span>
+				  </div>
+				  <input type="text" placeholder="Type here" name="telephone" required class="input input-bordered w-full" />
+				</label>
+		    </div>
+		    <div class="h-fit col-span-4 row-start-3">
+		    	<label class="form-control w-full">
+				  <div class="label">
+				    <span class="label-text">Topik Konsultasi</span>
+				  </div>
+				  <select class="select select-bordered w-full" name="topik" required>
+					<option value="all">Pilih topik</option>
+					<option value="Cara Penggunaan Website">Cara Penggunaan Website</option>
+					<option value="Persyaratan Lainnya">Persyaratan Lainnya</option>
+					<option value="Lainnya">Lainnya</option>
 				  </select>
 				</label>
 		    </div>
-		    <div class="col-span-6 row-start-4 row-span-2 h-full">
-		    	<label class="w-full h-full">
-					<div class="label">
-						<span class="label-text">Pesan</span>
-					</div>
-					<textarea class="textarea textarea-bordered w-full h-[120px] resize-none" name="pesan" placeholder="Pesan"></textarea>
+		    <div class="h-fit col-span-4 row-start-4">
+		    	<label class="form-control w-full">
+				  <div class="label">
+				    <span class="label-text">Pesan</span>
+				  </div>
+				  <textarea class="textarea textarea-bordered h-full w-full resize-none" name="pesan" required placeholder="Type here"></textarea>
 				</label>
 		    </div>
-		    <div class="col-span-6 row-start-6 flex justify-end">
-				<button class="btn btn-info text-white w-20" value="konsultasi" name="konsultasi">Kirim</button>
+		    <div class="h-fit col-span-4 row-start-5">
+		   		<button id="button" class="btn btn-info text-white hover:outline hover:outline-2 hover:outline-offset-2 float-right" name="konsultasi" value="konsultasi">Kirim</button>
 		    </div>
 		</div>
-			</form>
-	</div>
-    
+	</form>
 </div>
